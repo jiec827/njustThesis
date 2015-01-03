@@ -1,0 +1,7 @@
+# ignore files generated during compiling
+*.[oa]
+# except library link
+!lib.a
+# and the special files in Mac
+.DS_Store
+#
