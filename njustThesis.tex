@@ -1,0 +1,104 @@
+%%%%% ------------------------------------------------------------------------------------------
+%%
+%%                               Document Template
+%%
+%%  Project Name: njustThesis
+%%  Repository: https://github.com/jiec827/njustThesis
+%%
+%%%%% ------------------------------------------------------------------------------------------
+%% re-written by Jie Cheng <chengjie0827@gmail.com>
+%% Last-modified: 2015-01-05
+%%
+%% This program can be redistributed and/or modified under the terms
+%% of the GNU Public License, version 2.
+%%%%% ------------------------------------------------------------------------------------------
+%%
+%%%%*************************Document Class Declaration*******************************
+%%
+\documentclass{sty/njustThesis}% thesis template of the Nanjing Univ of Sci & Tech
+%% Options:
+%% [draftinfo] % show draft version information
+%%%%% --------------------------------------------------------------------------------
+%%
+%%%%**************************Command Define and Settings***************************
+%%
+\usepackage[njust]{sty/commons}% common settings
+\usepackage{sty/custom}% user defined commands
+%%%%% ------------------------------------------------------------------------------------------%%
+%%%%*********************************Content**********************************************
+%%
+\begin{document}
+%%
+%%%%% ------------------------------------------------------------------------------------------
+%%
+%%%%*********************************Frontmatter******************************************
+%%
+%% Frontmatter of Title page, Table of contents, Preface chapter.
+\frontmatter
+%%
+%% >>> Cover
+%%
+\input{tex/cover}
+%%
+%% >>> Abstract
+%%
+\input{tex/abstract}
+%%
+%%% >>> List of Content
+%%
+%\clearpage
+\tableofcontents% contents catalog
+\listoftables%    tables catalog
+\listoffigures%   figures catalog
+%%
+%% >>> prematter
+%%
+%\input{Prematter}% list of symbols, preface of books
+%% Ends the current page and causes any floats encountered in the input,
+%% but yet to appear, to be printed.
+%\clearpage
+%%
+%%%%% ------------------------------------------------------------------------------------------
+%%
+%%%%*********************************Mainmatter******************************************
+%%
+%% Main topics.
+\mainmatter
+%%
+%%% >>> Main Contents
+%%
+\input{tex/ch1-introduction}%
+%\input{tex/ch2-guide}%
+%%%%% ------------------------------------------------------------------------------------------
+%%
+%%%%*********************************Appendix********************************************
+%%
+%% Some subordinate chapters.
+\appendix%
+%\input{appendix}%
+%%%%% ------------------------------------------------------------------------------------------
+%%
+%%%%********************************Backmatter*******************************************
+%%
+%% Matters of Bibliography, Glossary, Index.
+\backmatter
+%%
+%%% >>> Bibliography
+%%
+\bibliography{myRefs}%
+\intotoc{参考文献}% add a corresponding item to the contents table and bookmark
+%%
+%%% >>> Publications
+%%
+%\input{publications}
+%%
+%%% >>> Resume
+%%
+%\input{resume}
+%%
+%%% >>> Acknowledgements
+%%
+%\input{thanks}
+%%
+\end{document}
+%%%%% ------------------------------------------------------------------------------------------
