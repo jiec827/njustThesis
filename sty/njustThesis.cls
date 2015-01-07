@@ -53,8 +53,7 @@
 %%
 %%%%*************************** loadclass infomation ************************************
 %%
-%% \LoadClass[cs4size,a4paper,fancyhdr,fntef,hyperref,UTF8,adobefonts]{ctexbook}[2011/03/11]
-\LoadClass[cs4size,a4paper,fancyhdr,fntef,UTF8]{ctexbook}[2011/03/11]
+\LoadClass[cs4size,a4paper,fancyhdr,fntef,hyperref,UTF8]{ctexbook}[2011/03/11]
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%***************************** package infomation ***********************************
@@ -63,6 +62,15 @@
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
 \RequirePackage{graphicx,psfrag,flafter,subfigure}
+%% hyperref package
+\hypersetup{CJKbookmarks,%
+       bookmarksnumbered,%
+              colorlinks,%
+               linkcolor=blue,%
+               citecolor=blue,%
+              plainpages=false,%
+            pdfstartview=FitH
+}
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%************************ load class configuretion ************************************
@@ -410,7 +418,8 @@
     \@mainmattertrue%
   \else
     \chapter{#1}%
-  \fi}
+  \fi
+}
 %%%%% ------------------------------------------------------------------------------------------
 %%  
 %%%%************************* make environments *********************************
@@ -482,20 +491,6 @@
 \renewenvironment{thanks}
   {\Nchapter{\NJUST@label@thanks}}
   {}
-%%%%% ------------------------------------------------------------------------------------------
-%%  
-%%%%******************************* set counter ******************************************
-%% 
-\setcounter{secnumdepth}{4}
-\newtheoremstyle{break}% name
-  {}%      Space above, empty = `usual value'
-  {}%      Space below
-  {\itshape}% Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\bfseries}% Thm head font
-  {.}%        Punctuation after thm head
-  {\newline}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
 %%%%% ------------------------------------------------------------------------------------------
 %%  
 %%%%*************************** public vars for thesis ***********************************

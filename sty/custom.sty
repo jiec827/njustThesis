@@ -55,8 +55,17 @@
 %%
 %%% >>> Toc Style
 %%
-%\setcounter{tocdepth}{2}% specifies what depth to take the Table of Contents to.
-%\setcounter{secnumdepth}{1}% the depth for section numbering occurs, default is 2(subsub).
+\setcounter{tocdepth}{1}% specifies what depth to take the Table of Contents to.
+\setcounter{secnumdepth}{3}% the depth for section numbering occurs, default is 2(subsub).
+\newtheoremstyle{break}% name
+  {}%      Space above, empty = `usual value'
+  {}%      Space below
+  {\itshape}% Body font
+  {}%         Indent amount (empty = no indent, \parindent = para indent)
+  {\bfseries}% Thm head font
+  {.}%        Punctuation after thm head
+  {\newline}% Space after thm head: \newline = linebreak
+  {}%         Thm head spec
 %%
 %%% >>> Grouping Figure/Equation Numbering by Section, Numberwithin.
 %%

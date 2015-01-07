@@ -34,11 +34,14 @@
 %%%%*********************************Frontmatter******************************************
 %%
 %% Frontmatter of Title page, Table of contents, Preface chapter.
-\frontmatter
 %%
 %% >>> Cover
 %%
 \input{tex/cover}
+%%
+%% >>> start frontmatter page No.
+%%
+\frontmatter
 %%
 %% >>> Abstract
 %%
@@ -48,15 +51,12 @@
 %%
 %\clearpage
 \tableofcontents% contents catalog
-\listoftables%    tables catalog
 \listoffigures%   figures catalog
-%%
-%% >>> prematter
-%%
-%\input{Prematter}% list of symbols, preface of books
-%% Ends the current page and causes any floats encountered in the input,
-%% but yet to appear, to be printed.
-%\clearpage
+\addcontentsline{toc}{chapter}{插图目录}
+\listoftables%    tables catalog
+\addcontentsline{toc}{chapter}{表格目录}
+\printnomenclature% nomenclature catalog
+\addcontentsline{toc}{chapter}{术语表}
 %%
 %%%%% ------------------------------------------------------------------------------------------
 %%
@@ -68,14 +68,13 @@
 %%% >>> Main Contents
 %%
 \input{tex/ch1-introduction}%
-%\input{tex/ch2-guide}%
+\input{tex/ch2-guide}%
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%*********************************Appendix********************************************
 %%
 %% Some subordinate chapters.
-\appendix%
-%\input{appendix}%
+\input{tex/appendix}%
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%********************************Backmatter*******************************************
@@ -83,22 +82,21 @@
 %% Matters of Bibliography, Glossary, Index.
 \backmatter
 %%
-%%% >>> Bibliography
+%%% >>> Acknowledgements
 %%
-\bibliography{myRefs}%
-\intotoc{参考文献}% add a corresponding item to the contents table and bookmark
+\input{tex/thanks}
 %%
 %%% >>> Publications
 %%
-%\input{publications}
+\input{tex/publications}
+%%
+%%% >>> Bibliography
+%%
+\bibliography{bib/myRefs}%
 %%
 %%% >>> Resume
 %%
-%\input{resume}
-%%
-%%% >>> Acknowledgements
-%%
-%\input{thanks}
+\input{tex/resume}
 %%
 \end{document}
 %%%%% ------------------------------------------------------------------------------------------

@@ -169,12 +169,12 @@
     pdffitwindow=false,% window fit to page when opened
     pdfstartview={FitH},% fits the width of the page to the window
     %pdfnewwindow=true,% links in new window
-    %colorlinks=true,% false: boxed links; true: colored links
-    %linkcolor=blue,% color of internal links
-    %citecolor=green,% color of links to bibliography
-    %filecolor=magenta,% color of file links
-    %urlcolor=cyan% color of external links
-    hidelinks% remove link color and border.
+    colorlinks=true,% false: boxed links; true: colored links
+    linkcolor=blue,% color of internal links
+    citecolor=green,% color of links to bibliography
+    filecolor=magenta,% color of file links
+    urlcolor=cyan% color of external links
+    %hidelinks% remove link color and border.
 }
 %% it gives LaTeX the possibility to manage links
 %% within the document or to any URL when you compile in PDF.
@@ -198,6 +198,15 @@
 %\geometry{left=3.18cm,right=3.18cm,top=2.54cm,bottom=2.54cm}% normal margins at each side.
 %\geometry{left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}% normal margins at each side.
 %%%%% --------------------------------------------------------------------------------
+%%
+%%%%*****************************Configuration nomenclature***************************
+%% set the nomenclature in two columns
+\usepackage{multicol}
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand*\nompreamble{\begin{multicols}{2}}
+\renewcommand*\nompostamble{\end{multicols}}
+\def\nomname{术\NJUSTspace 语\NJUSTspace 表}
 \endinput
 %% End of commons.sty
 %%%%% --------------------------------------------------------------------------------

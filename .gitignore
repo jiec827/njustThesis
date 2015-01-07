@@ -4,4 +4,13 @@
 !lib.a
 # and the special files in Mac
 .DS_Store
+# compiling files
+*.aux
+*.ilg
+*.lof
+*.lot
+*.nlo
+*.nls
+*.out
+*.toc
 #

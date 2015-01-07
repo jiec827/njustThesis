@@ -1,13 +1,73 @@
 \begin{abstract}
-本文是中国科学院大学学位论文模板——ucasthesis的使用说明文档。主要内容为介绍\LaTeX{}文档类ucasthesis的用法，以及如何使用\LaTeX{}快速高效地撰写学位论文。
 
-\keywords{中国科学院大学，学位论文，\LaTeX{}模板}
+本文是南京理工大学学位论文模板——njustThesis的使用说明文档。主要内容为介绍\LaTeX{}文档类njustThesis的用法，以及如何使用\LaTeX{}快速高效地撰写学位论文。
+
+\LaTeX{}是一种基于\TeX{}的排版系统，主要利用命令行代码的形式对文稿进行格式化处理。相对于常用的可视化工具(如MS Word$^{\circledR}$)而言，其能够让作者更加专注于文章本身内容，而较多地将排版等重复任务交给编译系统，尤其是数学公式、参考文献或图标较多的科技文献。针对中文，\LaTeX{}提供有CTeX套装，并且国内较多院校都提供有\LaTeX{}格式的学位论文模板，中文期刊的排版系统中应用也较为广泛。
+
+对于学位论文而言，\LaTeX{}又是体现在模块化处理、公式、图标、交叉引用等方面。模块化处理即将整个文稿切割成多个简单的子模块，然后利用主文件将文稿的子模块链接成一篇完整的文章(和编程语言中模块化、以及商业软件LsDYNA$^{\circledR}$中使用的include命令相同)。另外，排版系统中的格式定义系统也可以单独的模块化，由类文件(.cls)通过命令定义文中需要的版式等格式函数命令，通过格式文件（.sty）包含一些常用的包（package）。如此，文章中的格式信息和文稿中的内容就形成了相对独立的系统。对普通用户而言，只需要书写文稿内容，而将格式信息交由专业排版方进行(如图书馆、出版社等)。公式和图表的优势体现在，格式自动化对齐(相信使用MS的都有过公式窜行和表格窜页的感触)、交叉引用自动编号。
+
+在模块化的基础上，本文模板将南京理工大学学位论文格式进行标准化处理，方便使用方快速查找需要添加的文稿位置。文件夹架构是标准化的基础，将格式信息、文本内容、插图、文献分别布置在sty、tex、img和bib四个文件夹下，由主模块myThesis.tex进行流程控制。
+
+对于用户而言，使用步骤较为简单（注意：中文的文本编辑应采用UTF-8）：
+
+1. 下载模版包（https://github.com/jiec827/njustThesis），解压；
+
+2. 修改学位论文信息（tex/cover.tex），并将对应的内容添加至tex目录下的其他文件内（正文部分额外添加的章节需要在myThesis.tex文件中使用input命令包含）；
+
+3. 采用命令{\color{blue}xelatex myThesis.tex}进行编译；
+
+4. 命令行{\color{blue}makeindex myThesis.nlo -s nomencl.ist -o myThesis.nls}生成术语链接；
+
+5. {\color{blue}xelatex myThesis.tex}重新编译生成pdf文件。
+
+为了更好的完成学位论文这种长篇幅的文稿排版，对格式文件的了解也是有必要的。首先从主文件myThesis.tex着手，把握真个流程思路与文章的对应关系。然后看格式文件／sty，可以从njustThesis.cls开始，.cfg和.sty较为简单，只是包含一些需要使用的常量、默认值和扩展包等。
+
+小提醒：学习的宝典当然还是google$^{\circledR}$和baidu$^{\circledR}$哦！
+
+本文初衷是趁双旦闲暇，给以后的学位论文排版做点准备工作。有感于开源的精神，特把排版代码放到GitHub$^{\circledR}$上，在开发过程中虽然是以参考和借鉴为主，但仍按照Repository的软件工程开源流程进行操作。希望能够有人多多参与，通过这个简单的开源项目，了解、学习和推广。当然，回到根本，希望这个基于\LaTeX{}的排版项目能够给更多的同学提供一点小帮助。
+
+\keywords{南京理工大学，学位论文，\LaTeX{}，模板}
 \end{abstract}
 
 
 \begin{englishabstract}
-This paper is a help documentation for the \LaTeX{} class ucasthesis, which is  a thesis template for the University of Chinese Academy of Sciences. The main content is about how to use the ucasthesis, as well as how to write thesis efficiently by using \LaTeX{}.
 
-\englishkeywords{University of Chinese Academy of Sciences (UCAS), Thesis, \LaTeX{}
+1 In the beginning was the Word, and the Word was with God, and the Word was God. 2 He was with God in the beginning. 3 Through him all things were made; without him nothing was made that has been made. 4 In him was life, and that life was the light of all mankind. 5 The light shines in the darkness, and the darkness has not overcome it.
+
+6 There was a man sent from God whose name was John. 7 He came as a witness to testify concerning that light, so that through him all might believe. 8 He himself was not the light; he came only as a witness to the light.
+
+9 The true light that gives light to everyone was coming into the world. 10 He was in the world, and though the world was made through him, the world did not recognize him. 11 He came to that which was his own, but his own did not receive him. 12 Yet to all who did receive him, to those who believed in his name, he gave the right to become children of God. 13 children born not of natural descent, nor of human decision or a husband’s will, but born of God.
+
+14 The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and truth.
+
+15 (John testified concerning him. He cried out, saying, “This is the one I spoke about when I said, ‘He who comes after me has surpassed me because he was before me.’”) 16 Out of his fullness we have all received grace in place of grace already given. 17 For the law was given through Moses; grace and truth came through Jesus Christ. 18 No one has ever seen God, but the one and only Son, who is himself God and[b] is in closest relationship with the Father, has made him known.
+
+19 Now this was John’s testimony when the Jewish leaders[c] in Jerusalem sent priests and Levites to ask him who he was. 20 He did not fail to confess, but confessed freely, “I am not the Messiah.”
+
+21 They asked him, “Then who are you? Are you Elijah?”
+
+He said, “I am not.”
+
+“Are you the Prophet?”
+
+He answered, “No.”
+
+22 Finally they said, “Who are you? Give us an answer to take back to those who sent us. What do you say about yourself?”
+
+23 John replied in the words of Isaiah the prophet, “I am the voice of one calling in the wilderness, ‘Make straight the way for the Lord.’”
+
+24 Now the Pharisees who had been sent 25 questioned him, “Why then do you baptize if you are not the Messiah, nor Elijah, nor the Prophet?”
+
+26 “I baptize with[e] water,” John replied, “but among you stands one you do not know. 27 He is the one who comes after me, the straps of whose sandals I am not worthy to untie.”
+
+28 This all happened at Bethany on the other side of the Jordan, where John was baptizing.
+
+29 The next day John saw Jesus coming toward him and said, “Look, the Lamb of God, who takes away the sin of the world! 30 This is the one I meant when I said, ‘A man who comes after me has surpassed me because he was before me.’ 31 I myself did not know him, but the reason I came baptizing with water was that he might be revealed to Israel.”
+
+32 Then John gave this testimony: “I saw the Spirit come down from heaven as a dove and remain on him. 33 And I myself did not know him, but the one who sent me to baptize with water told me, ‘The man on whom you see the Spirit come down and remain is the one who will baptize with the Holy Spirit.’ 34 I have seen and I testify that this is God’s Chosen One.”
+
+(cited from: {\color{blue}{{\it{John: The Word Became Flesh}}}})
+
+\englishkeywords{Nanjing University of Sciences \& Technology (NUST), Thesis, \LaTeX{}
 Template}
 \end{englishabstract}
