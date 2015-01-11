@@ -1,0 +1,105 @@
+
+\chapter{文档架构}
+\label{chap:textStructure}
+
+本章的目的是介绍\LaTeX{}的文本控制流程，即如何实现文本在各章节中的分布，以及章节内的交叉引用问题，用户可以根据自身对\LaTeX{}的熟悉程度适当地略过阅读。在了解了本章的内容后，用户即可快速实现文本内容的粘贴和复制，实现一个在文本内容满足基本需求的文档。
+
+\section{章节控制流程}
+\label{sec:controlFlow}
+\subsection{全文流程}
+从整体而言，实现整个文档的架构在{\it{myThesis.tex}}中，通过{\it{input}}命令对需要的章节进行输入，基本格式如下表格~\ref{tab:controlFlow}
+
+
+\begin{table}
+ \centering
+  \caption{章节控制流程}        % title of Table
+  \label{tab:controlFlow}    % label of Table
+   \begin{tabular}{l}
+   \hline
+   \textbackslash begin\{document\}                \\
+   \%\% start front page No.                       \\
+   \textbackslash frontmatter                      \\   
+   \textbackslash input\{tex/cover\}                 \\
+   \%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\% \\
+   \%\% start main page No.                        \\
+   \textbackslash mainmatter                       \\   
+   \textbackslash input\{tex/ch1-introduction\}\%    \\
+   \textbackslash input\{tex/ch2-guide\}\%           \\
+   \textbackslash input\{tex/ch3-texStructure\}\%    \\
+   \textbackslash input\{tex/ch4-eqnFigAndTab\}\%    \\
+   \%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\% \\
+   \textbackslash input\{tex/appendix\}\%            \\
+   \%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\%\% \\
+   \%\% start back page No.                        \\
+   \textbackslash backmatter                       \\ 
+   \textbackslash input\{tex/publications\}          \\
+   \textbackslash bibliography\{bib/myRefs\}         \\
+   \textbackslash end\{document\}                    \\
+   \hline              
+  \end{tabular}
+\end{table}
+
+全文流程分为三部分：front、main和back，三部分采用不同页码系统和页眉页脚，需要在代码中分别表示出各部分开始位置。对于用户而言，重要的在于main，根据实际文章要求在此处添加需要的章节引用。
+
+\subsection{章节设置}
+章节的设置分别通过关键字完成，按照章节的级别依此如表~\ref{tab:setSection}所示，关于文档中具体章节的关键词设置可以参看原宏包中tex文件夹下的实例文件。
+
+
+\begin{table}
+ \centering
+  \caption{章节设置关键字}     % title of Table
+  \label{tab:setSection}    % label of Table
+  \begin{tabular}{cl}
+    \hline
+    章节级别        & 关键字     \\
+    \hline
+    1 / 章        & \textbackslash chapter \\
+    2 / 节        & \textbackslash section \\
+    3 / 子节      & \textbackslash  subsection \\
+    表格名称       & \textbackslash caption\{章节设置关键字\} \\
+    引用标签       & \textbackslash label\{sec:labelName\} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+\section{交叉引用}
+\subsection{公式、图表和插图引用}
+交叉引用的前提是需要在定义章节、公式和图表的时候都对其进行命名标签（即\textbackslash label\{sec:labelName\}命令），在实际使用过程中通过标签进行引用。根据引用的特点可以将应用分成表~\ref{tab:citeType}中所示三类。
+
+\begin{table}
+ \centering
+  \caption{交叉引用类型}       % title of Table
+  \label{tab:citeType}    % label of Table
+  \begin{tabular}{cl}
+    \hline
+    引用类型     & 关键字     \\
+    \hline
+    标签设置        & \textbackslash label\{marker\}  \\
+    引用代号        & \textbackslash ref\{marker\}    \\
+    引用页码        & \textbackslash pageref\{marker\} \\
+    引用文献        & \textbackslash cite\{regLabel\} \\
+    \hline
+  \end{tabular}
+\end{table}
+
+{\bf{实例1：}}这里是对表格《交叉引用类型》的引用——表~\ref{tab:citeType}位于第~\pageref{tab:citeType}页，其标签为\textbackslash label\{tab:citeType\}。
+
+另外，在编译的过程中首次编译全文后需要对引用项进行索引编译，
+
+\begin{center}
+  {\color{blue}makeindex myThesis.nlo -s nomencl.ist -o myThesis.nls}
+\end{center}
+
+再进行第二次编译后才能更新全文中的交叉引用项。
+
+\subsection{文献引用引用}
+{\bf{实例2：}}这里是对文献《{\it{State-Space Representation of Aerodynamic Characteristics of an Aircraft at High Angles of Attack}}》的引用——文献\cite{Goman:state_aerodynamics}。这里文献采用bibTex格式。
+
+同样，在编译的过程中首次编译全文后需要对参考文献进行索引编译，
+
+\begin{center}
+  {\color{blue}bibtex myThesis.aux}
+\end{center}
+
+再进行第二次编译后才能更新全文中的文献引用项。

@@ -2,7 +2,7 @@ njustThesis
 ================================================================================
 Description: 
 
-LaTeX thesis template for Nanjing University of Sci & Tech (for PhD students)
+LaTeX (degree) thesis template for Nanjing University of Sci & Tech
 
 References: 
 
@@ -36,6 +36,22 @@ readability of the codes(ecourage open-source projects);
     Updating the new logos; 
 
     Make it more compatible with MacTex.
+
+================================================================================
+Download:
+
+    git clone https://github.com/jiec827/njustThesis
+
+================================================================================
+Usage:
+
+    1. 修改学位论文封面信息（tex/cover.tex），并将对应的具体章节内容添加至tex目录下的其他文件内（正文部分额外添加的章节需要在myThesis.tex文件中使用input命令包含）；
+
+    2. 采用命令xelatex myThesis.tex进行编译；
+
+    3. 命令行makeindex myThesis.nlo -s nomencl.ist -o myThesis.nls生成术语链接；
+
+    4. xelatex myThesis.tex重新编译生成pdf文件。
 
 ================================================================================
 Files:

@@ -2,36 +2,25 @@
 \chapter{使用简介}
 \label{chap:guide}
 
-为方便使用及更好的展示\LaTeX{}排版的优秀特性，本人对模板的框架和文件体系进行了细致地处理，尽可能地对各个功能和板块进行了模块化和封装，对于初学者来说，众多的文件目录也许会让人觉得有些无所适从，但阅读完下面的使用说明后，您会发现原来使用思路是简单而清晰的，而且，当对\LaTeX{} 有一定的认识和了解后，会发现其相对Word类排版系统的极具吸引力的优秀特性。所以，如果您是初学者，请不要退缩，请稍加尝试和坚持，让自己领略到\LaTeX{}的非凡魅力。
+为方便使用及更好的展示\LaTeX{}排版的优秀特性，本人对模板的框架和文件体系进行了一些处理，尽可能地对各个功能和板块进行了模块化和封装，对于初学者来说，众多的文件目录也许会让人觉得有些无所适从，但阅读完下面的使用说明后，您会发现原来使用思路是简单而清晰的，而且，当对\LaTeX{} 有一定的认识和了解后，会发现其相对Word类排版系统的极具吸引力的优秀特性。所以，如果您是初学者，请不要退缩，请稍加尝试和坚持，让自己领略到\LaTeX{}的非凡魅力。
 
 \section{先试试效果}
 
-\begin{equation}
-a=\frac{N}{A}
-\end{equation}%
-\nomenclature{$a$}{The number of angels per unit area}%
-\nomenclature{$N$}{The number of angels per needle point}%
-\nomenclature{$A$}{The area of the needle point}%
+\texttt{njustThesis}模板不仅只是提供了相应的类文件，同时也提供了包括参考文献等在内的完成学位论文的一切要素，所以，下载时，推荐下载整个ucasthesis文件夹，而不是单独的文档类。
 
-ucasthesis模板不仅只是提供了相应的类文件，同时也提供了包括参考文献等在内的完成学位论文的一切要素，所以，下载时，推荐下载整个ucasthesis文件夹，而不是单独的文档类。
+在下载\texttt{njustThesis}宏包之前，首先检查工作电脑是否满足第~\ref{sec:sysRequire}节中对系统的要求，主要是对\TeX{}安装包的要求。若是第一次安装使用，推荐首先在电脑上运行一个简单的中文教程，既是对安装包的确认，也是帮助认识\LaTeX{}的工作流程。下载\texttt{njustThesis}文件夹后，请在文件夹目录下，按照摘要或者README.md中的基本流程首次运行宏包，确认系统工作状态良好。
 
-下载ucasthesis文件夹并解压后，请在文件夹内找到“Compile.bat”，双击运行，即可获得本说明文档，而这，也完成了学习使用此模板撰写论文的一半进程，什么？这就学成一半了，这么简单？？？，是的，就这么简单！
+编译完成，若工作正常将得到对应的PDF文档myThesis.pdf。恭喜，至此你就完成了一次简单的系统运行！后续，你就可以参见各子目录内容进行对应内容的添加。如若编译失败，仔细查看log文件，找出对应的问题（应该大多是系统配置问题）。
 
-编译完成后，可以进入各个子目录逛逛，熟悉下模板框架。
+为了与南京理工大学研究生院的MS Word$^{\circledR}$版对照,需将南京理工大学研究生院提供的Word版转化为PDF文件(南京理工大学学位论文撰写规范.pdf)，对比编译出来的PDF文件和官网生成模版。
 
-\section{常见使用问题}
+\section{范例文档结构}
+\label{sec:example}
 
-NJUSTthesis 宏包的最新版本可以从 https://latex-njust808.googlecode. com/, 网站下载。NJUSTthesis 宏包包含两个文件:NJUSTthesis.cls 和 NJUSTthesis.cfg。简单 方便的安装方法是将宏包文件和学位论文 .tex 文件放置在同一目录下。或者将宏包 文件放置到 TEX 系统的 localtexmf/tex/latex/casthesis 目录下,然后刷新 TEX 系统 的文件名数据库。
-同时,宏包还提供了一个使用模板,也就是这份说明文档的源文件。用户可以通 过修改这个模板来编写自己的学位论文。宏包源文件 NJUSTthesisdtx.dtx完全是吴老师原来的文件,只是把原来的 CASthesis 替代 NJUSTthesis ,把 CAST 替代为 NJUST ,所以用户也可以下载吴老 师的宏包源文件 CASthesis.dtx 和 CASthesis.ins ,然后按南京理工大学博士学位 撰写要求来修订,最后再修订好的对 CASthesis.ins 文件运行 latex 编译命令来得 到宏包文件。关于安装过程的问题可以参考 CTEX-FAQ 以及其他 LATEX 教材。 关于速成(93 分钟学会)LATEX的教材请网上下载《一份不太简短的LATEX2ε介绍》。
+HowToUseIt.pdf是该项目最新编译生成的模版文件，目的是帮助用户即使在不了解\LaTeX{}排版技术的情况下能够快速的入门，并利用该项目的\texttt{njustThesis}模板加快学位论文的排版工作，从而能够将更多的时间专注于论文所研究的问题上，希望能够达到这样的一点点帮助！
 
-为了与南京理工大学研究生院的 Word 版对照,特将南京理工大学研究生院提供 的 Word 版转化为 PDF 文件(南京理工大学学位论文撰写规范.pdf),可方便与 LATEX 版下编译出来的 PDF 进行对比。当然,在格式或尺寸方面可能有一点点差异,毕竟 两者对字体,版面等的定义存在差异,但 LATEX 版下编译出来的 PDF 完全适合《南 京理工大学学位论文撰写规范》文件夹中的 clean.bat 文件,起到清涂编译后的临时文件用的,很方便。此版本的参考文献采用了哈尔滨工业大学 LATEX 模版中由 jdg 编写的格式,即文 件夹中的 chinesebst2005 GBK.bst 文件。完全满足南京理工大学博士学位论文的参 考文献要求,在这里感谢 jdg 的贡献。
+范例文档的结构在第~\ref{sec:howtouse}中已经有所提及，这里只是单纯介绍一下正文中对使用方法的描述部分。正文部分包含四章：引言、使用简介、文本结构和公式图表使用。前两章较多的项目和使用方法的介绍，后两章着重对\LaTeX{}排版技术在学位论文中的常见使用。用户可以针对性的进行阅读，也可以直接跳过，把范例中的内容作为当作手册使用。
 
-NJUSTthesis 宏包的最新版本可以从 https://latex-njust808.googlecode. com/, 网站下载。NJUSTthesis 宏包包含两个文件:NJUSTthesis.cls 和 NJUSTthesis.cfg。简单 方便的安装方法是将宏包文件和学位论文 .tex 文件放置在同一目录下。或者将宏包 文件放置到 TEX 系统的 localtexmf/tex/latex/casthesis 目录下,然后刷新 TEX 系统 的文件名数据库。
-同时,宏包还提供了一个使用模板,也就是这份说明文档的源文件。用户可以通 过修改这个模板来编写自己的学位论文。宏包源文件 NJUSTthesisdtx.dtx完全是吴老师原来的文件,只是把原来的 CASthesis 替代 NJUSTthesis ,把 CAST 替代为 NJUST ,所以用户也可以下载吴老 师的宏包源文件 CASthesis.dtx 和 CASthesis.ins ,然后按南京理工大学博士学位 撰写要求来修订,最后再修订好的对 CASthesis.ins 文件运行 latex 编译命令来得 到宏包文件。关于安装过程的问题可以参考 CTEX-FAQ 以及其他 LATEX 教材。 关于速成(93 分钟学会)LATEX的教材请网上下载《一份不太简短的LATEX2ε介绍》。
 
-为了与南京理工大学研究生院的 Word 版对照,特将南京理工大学研究生院提供 的 Word 版转化为 PDF 文件(南京理工大学学位论文撰写规范.pdf),可方便与 LATEX 版下编译出来的 PDF 进行对比。当然,在格式或尺寸方面可能有一点点差异,毕竟 两者对字体,版面等的定义存在差异,但 LATEX 版下编译出来的 PDF 完全适合《南 京理工大学学位论文撰写规范》文件夹中的 clean.bat 文件,起到清涂编译后的临时文件用的,很方便。此版本的参考文献采用了哈尔滨工业大学 LATEX 模版中由 jdg 编写的格式,即文 件夹中的 chinesebst2005 GBK.bst 文件。完全满足南京理工大学博士学位论文的参 考文献要求,在这里感谢 jdg 的贡献。
 
-NJUSTthesis 宏包的最新版本可以从 https://latex-njust808.googlecode. com/, 网站下载。NJUSTthesis 宏包包含两个文件:NJUSTthesis.cls 和 NJUSTthesis.cfg。简单 方便的安装方法是将宏包文件和学位论文 .tex 文件放置在同一目录下。或者将宏包 文件放置到 TEX 系统的 localtexmf/tex/latex/casthesis 目录下,然后刷新 TEX 系统 的文件名数据库。
-同时,宏包还提供了一个使用模板,也就是这份说明文档的源文件。用户可以通 过修改这个模板来编写自己的学位论文。宏包源文件 NJUSTthesisdtx.dtx完全是吴老师原来的文件,只是把原来的 CASthesis 替代 NJUSTthesis ,把 CAST 替代为 NJUST ,所以用户也可以下载吴老 师的宏包源文件 CASthesis.dtx 和 CASthesis.ins ,然后按南京理工大学博士学位 撰写要求来修订,最后再修订好的对 CASthesis.ins 文件运行 latex 编译命令来得 到宏包文件。关于安装过程的问题可以参考 CTEX-FAQ 以及其他 LATEX 教材。 关于速成(93 分钟学会)LATEX的教材请网上下载《一份不太简短的LATEX2ε介绍》。
 
-为了与南京理工大学研究生院的 Word 版对照,特将南京理工大学研究生院提供 的 Word 版转化为 PDF 文件(南京理工大学学位论文撰写规范.pdf),可方便与 LATEX 版下编译出来的 PDF 进行对比。当然,在格式或尺寸方面可能有一点点差异,毕竟 两者对字体,版面等的定义存在差异,但 LATEX 版下编译出来的 PDF 完全适合《南 京理工大学学位论文撰写规范》文件夹中的 clean.bat 文件,起到清涂编译后的临时文件用的,很方便。此版本的参考文献采用了哈尔滨工业大学 LATEX 模版中由 jdg 编写的格式,即文 件夹中的 chinesebst2005 GBK.bst 文件。完全满足南京理工大学博士学位论文的参 考文献要求,在这里感谢 jdg 的贡献。

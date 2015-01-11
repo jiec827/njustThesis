@@ -16,9 +16,11 @@
 
 3. 采用命令{\color{blue}xelatex myThesis.tex}进行编译；
 
-4. 命令行{\color{blue}makeindex myThesis.nlo -s nomencl.ist -o myThesis.nls}生成术语链接；
+4. 命令行{\color{blue}makeindex myThesis.nlo -s nomencl.ist -o myThesis.nls}生成图表引用和术语链接；
 
-5. {\color{blue}xelatex myThesis.tex}重新编译生成pdf文件。
+5. 命令行{\color{blue}bibtex myThesis.aux}更新参考文献引用；
+
+6. {\color{blue}xelatex myThesis.tex}重新编译生成pdf文件。
 
 为了更好的完成学位论文这种长篇幅的文稿排版，对格式文件的了解也是有必要的。首先从主文件myThesis.tex着手，把握真个流程思路与文章的对应关系。然后看格式文件／sty，可以从njustThesis.cls开始，.cfg和.sty较为简单，只是包含一些需要使用的常量、默认值和扩展包等。
 

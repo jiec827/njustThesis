@@ -5,6 +5,9 @@
 # and the special files in Mac
 .DS_Store
 # compiling files
+*.log
+*.blg
+*.bbl
 *.aux
 *.ilg
 *.lof
