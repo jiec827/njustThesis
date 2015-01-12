@@ -65,6 +65,7 @@
 
 \section{交叉引用}
 \subsection{公式、图表和插图引用}
+\label{sec:refofFigAndTab}
 交叉引用的前提是需要在定义章节、公式和图表的时候都对其进行命名标签（即\textbackslash label\{sec:labelName\}命令），在实际使用过程中通过标签进行引用。根据引用的特点可以将应用分成表~\ref{tab:citeType}中所示三类。
 
 \begin{table}
@@ -93,7 +94,9 @@
 
 再进行第二次编译后才能更新全文中的交叉引用项。
 
-\subsection{文献引用引用}
+\subsection{文献引用}
+\label{sec:citeRefs}
+
 {\bf{实例2：}}这里是对文献《{\it{State-Space Representation of Aerodynamic Characteristics of an Aircraft at High Angles of Attack}}》的引用——文献\cite{Goman:state_aerodynamics}。这里文献采用bibTex格式。
 
 同样，在编译的过程中首次编译全文后需要对参考文献进行索引编译，
