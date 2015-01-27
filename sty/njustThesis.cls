@@ -428,14 +428,42 @@
 %%%%% ------------------------------------------------------------------------------------------
 %%  
 %%%%************************* make environments *********************************
+%% 0. list of figures, tables and bibtex
+%% seperately
+\renewcommand*\listoffigures{%
+  {\centering
+  \chapter*{\listfigurename}%
+  \@mkboth{\MakeUppercase\listfigurename}%
+          {\MakeUppercase\listfigurename}%
+  \@starttoc{lof}%% list of figures
+  }
+}
+%%
+\renewcommand*\listoftables{%
+  {\centering
+  \chapter*{\listtablename}%
+  \@mkboth{\MakeUppercase\listtablename}%
+          {\MakeUppercase\listtablename}%
+  \@starttoc{lot}%% list of tables
+  }
+}
+%% figure and table
+\newcommand*\listoffiguresandtables{%
+  {\centering
+  \chapter*{\NUST@listfiguresandtablesname}%
+  \@mkboth{\MakeUppercase\NUST@listfiguresandtablesname}%
+          {\MakeUppercase\NUST@listfiguresandtablesname}%
+  \@starttoc{lof}%% list of figures
+  \bigskip       %% space
+  \@starttoc{lot}%% list of tables
+  }
+}
+%%
+
 %% 1. symbol
 \newenvironment{symbolname}
   {\Nchapter{\NJUST@label@symbolname}}
   {}
-%% 1. list of figure
-%\renewenvironment{listoffigures}
-%  {{\centering\Nchapter{\listfigurename}}}
-%  {}
 %% 2. bibliography
 \renewenvironment{thebibliography}[1]
      {\Nchapter{\centering\bibname}%

@@ -24,7 +24,7 @@
 %%
 \usepackage[njust]{sty/commons}% common settings
 \usepackage{sty/custom}% user defined commands
-%%%%% ------------------------------------------------------------------------------------------%%
+%%%%% ------------------------------------------------------------------------------------------
 %%%%*********************************Content**********************************************
 %%
 \begin{document}
@@ -51,11 +51,16 @@
 %%
 %\clearpage
 \tableofcontents% contents catalog
-\listoffigures%   figures catalog
-\addcontentsline{toc}{chapter}{插图目录}
-\listoftables%    tables catalog
-\addcontentsline{toc}{chapter}{表格目录}
-\printnomenclature% nomenclature catalog
+%% list figures and tables sperately
+%\listoffigures%   figures catalog
+%\addcontentsline{toc}{chapter}{插图目录}
+%\listoftables%    tables catalog
+%\addcontentsline{toc}{chapter}{表格目录}
+%% list figures and tables together
+\listoffiguresandtables
+\addcontentsline{toc}{chapter}{图表目录}
+%%
+{\centering\printnomenclature}% nomenclature catalog
 \addcontentsline{toc}{chapter}{术语表}
 %%
 %%%%% ------------------------------------------------------------------------------------------
@@ -94,7 +99,8 @@
 %%
 %%% >>> Bibliography
 %%
-\bibliography{bib/myRefs}%
+%\bibliographystyle{plainnat}
+{\centering\bibliography{bib/myRefs}}%
 %%
 %%% >>> Resume
 %%
