@@ -58,6 +58,7 @@
 %%
 %%%%***************************** package infomation ***********************************
 %%
+%% font
 %% math packages
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
@@ -166,13 +167,13 @@
   \begin{center}
     \songti\zihao{5}
     	\NJUST@label@classification~               %% header
-	\NJUSTunderline[100pt]{\NJUST@value@classification}
+	\NJUSTunderline[156pt]{\NJUST@value@classification}
 		\hfill
 	\NJUST@label@confidential~
-	\NJUSTunderline[100pt]{\NJUST@value@confidential}\hspace{1.4cm}
+	\NJUSTunderline[156pt]{\NJUST@value@confidential}\hspace{1.4cm}
    \vskip 10pt
    	 \NJUST@label@UDC~
-      	\NJUSTunderline[108pt]{\NJUST@value@UDC}
+      	\NJUSTunderline[149pt]{\NJUST@value@UDC}
             \hfill
       	\NJUSTunderline[0pt]{}
     \vskip \stretch{2}
@@ -186,11 +187,11 @@
     \def\tabcolsep{1pt}
     \def\arraystretch{1.5}
     \begin{tabular}{llclr}
-      %%\NJUST@label@advisor\NJUST@label@surname &
       \NJUST@label@advisor &
-      \multicolumn{4}{l}{\NJUSTunderline[299pt]{\bf\kaishu\zihao{3}\NJUST@value@advisor}}
+      \multicolumn{4}{l}{\NJUSTunderline[299pt]{{\bf\kaishu\zihao{3}\NJUST@value@advisor} \hspace{4pt} {\kaishu\zihao{4}\NJUST@value@advisortitle}}}
     \\
-      & \multicolumn{4}{l}{\NJUSTunderline[299pt]{\bf\kaishu\zihao{3}\NJUST@value@coadvisor}}
+      \NJUST@label@coadvisor &
+      \multicolumn{4}{l}{\NJUSTunderline[299pt]{{\bf\kaishu\zihao{3}\NJUST@value@coadvisor} \hspace{4pt} {\kaishu\zihao{4}\NJUST@value@coadvisortitle}}}
     \\
       \NJUST@label@degree &
       \NJUSTunderline[90pt]{\bf\kaishu\zihao{3}\NJUST@value@degree} & \hspace{4pt} &
@@ -232,20 +233,22 @@
   \cleardoublepage
   \thispagestyle{empty}
   \begin{center}
-    \kaishu\zihao{-2}\NJUST@value@country\NJUST@value@degree\NJUST@value@incoverthesis
+    %\kaishu\zihao{-2}\NJUST@value@country\NJUST@value@degree\NJUST@value@incoverthesis
+    \kaishu\zihao{-2}\NJUST@value@degree\NJUST@value@incoverthesis
     \\[3.25cm]
-    \heiti\zihao{2}\NJUST@value@title
+    \bf\heiti\zihao{2}\NJUST@value@title
     \\[2.2cm]
     \begin{tabular}{rl}
-    \bf\kaishu\zihao{-2}\NJUST@label@incoverauthor & \bf\kaishu\zihao{-2}\NJUST@value@author
+    \bf\kaishu\zihao{-2}\NJUST@label@incoverauthor & \bf\kaishu\zihao{-2}\NJUST@value@author 
     \\[25pt]
-    \bf\kaishu\zihao{-2}\NJUST@label@incoveradvisor& \bf\kaishu\zihao{-2}\NJUST@value@advisor\\
-    & \bf\kaishu\zihao{-2}\NJUST@value@coadvisor
+    \bf\kaishu\zihao{-2}\NJUST@label@incoveradvisor & \bf\kaishu\zihao{-2}\NJUST@value@advisor\hspace{4pt}\NJUST@value@advisortitle
+    \\
+    \bf\kaishu\zihao{-2}\NJUST@label@incovercoadvisor & \bf\kaishu\zihao{-2}\NJUST@value@coadvisor\hspace{4pt}\NJUST@value@coadvisortitle
     \end{tabular}
     \vskip 5pt
     \parbox[c][7cm][c]{\textwidth}{%
     \centering
-    \includegraphics[width=5cm,height=5cm]{img/njust_logo.jpg}
+    %\includegraphics[width=5cm,height=5cm]{img/njust_logo.jpg}
     }%
     \vskip 14pt
     \bf\songti\zihao{-2}\NJUST@value@school
@@ -283,13 +286,13 @@
     \vskip 20pt
       \rmfamily\bf\zihao{2} \NJUST@value@englishtitle
     \vskip 30pt 
-      \normalfont\slshape\zihao{-2}\NJUST@label@englishauthor
+      \normalfont\it\zihao{-2}\NJUST@label@englishauthor
       \\
       \bf\zihao{-2}\emph\NJUST@value@englishauthor
     \vskip 30pt 
     \begin{tabular}{rl}
-      \normalfont\slshape\zihao{-2} \NJUST@label@englishadvisor & \bf\emph\NJUST@value@englishadvisor\\
-      & \normalfont\slshape\zihao{-2} \bf\emph\NJUST@value@englishcoadvisor
+      \normalfont\it\zihao{-2} \NJUST@label@englishadvisor & \bf\emph\NJUST@value@englishadvisor\\
+      \normalfont\it\zihao{-2} \NJUST@label@englishcoadvisor \hspace{45pt} & \normalfont\it\zihao{-2} \bf\emph\NJUST@value@englishcoadvisor
     \end{tabular}
     \vskip \stretch{2}
       \normalfont\zihao{-2} \NJUST@value@englishinstitute
@@ -330,7 +333,7 @@
 \fi
 %%%%% ------------------------------------------------------------------------------------------
 %% 
-%%%%**************************** page setting for abstract *******************************
+%%%%**************************** page setting **************************************
 %% set page style by fancyhdr:
   %% The syntax is: \fancyhead[selectors]{output you want}
   %% E Even page
@@ -342,8 +345,9 @@
   %% F Footer
   %% so [CE,RO] will refer to the center of the even pages and to the right side of the odd pages.
 %% configure fancy style
-%% 
+%% change page NO to Roman only for frontmatter 
 \renewcommand\frontmatter{\pagenumbering{Roman}}
+%%
 \fancypagestyle{plain}{%
   \fancyhf{}%
   \fancyfoot[R]{\songti\zihao{-5} --~{\thepage}~--}
@@ -363,18 +367,19 @@
 %%%%**************************** make abstract & keywords *****************************
 %% 1. CHN abstract
 \newenvironment{abstract}
-  {\Nchapter{\NJUST@label@abstract}}
+  {{\centering\Nchapter{\NJUST@label@abstract}}}
   {}
 %% 2. CHN kewords
 \newcommand\keywords[1]{%
-  \vspace{2ex}\noindent{\heiti \NJUST@label@keywords} #1}
+  %\vspace{2ex}\noindent{\heiti \NJUST@label@keywords} #1}
+  \vspace{2ex}\noindent{\bf\songti\zihao{4} \NJUST@label@keywords} #1}
 %% 3. Eng abstract
 \newenvironment{englishabstract}
-  {\Nchapter{\NJUST@label@englishabstract}}
+  {{\centering\Nchapter{\NJUST@label@englishabstract}}}
   {}
 %% 4. Eng keywords
 \newcommand\englishkeywords[1]{%
-  \vspace{2ex}\noindent{\bf \NJUST@label@englishkeywords} #1}
+  \vspace{2ex}\noindent{\bf\songti\zihao{4} \NJUST@label@englishkeywords} #1}
 %%
 %% 5. other settings
 \renewcommand*\l@chapter[2]{%
@@ -405,7 +410,7 @@
     \else
       \@restonecolfalse
     \fi
-    \chapter*{\contentsname}%
+    {\centering\chapter*{\contentsname}}%
     \@mkboth{\MakeUppercase\contentsname}{\MakeUppercase\contentsname}%
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
@@ -427,9 +432,13 @@
 \newenvironment{symbolname}
   {\Nchapter{\NJUST@label@symbolname}}
   {}
+%% 1. list of figure
+%\renewenvironment{listoffigures}
+%  {{\centering\Nchapter{\listfigurename}}}
+%  {}
 %% 2. bibliography
 \renewenvironment{thebibliography}[1]
-     {\Nchapter{\bibname}%
+     {\Nchapter{\centering\bibname}%
       \@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
            {\settowidth\labelwidth{\@biblabel{#1}}%
@@ -449,7 +458,7 @@
       \endlist}
 %% 3. publications
 \newenvironment{publications}[1]
-     {\Nchapter{\NJUST@label@publications}%
+     {{\centering\Nchapter{\NJUST@label@publications}}%
       \@mkboth{\MakeUppercase\NJUST@label@publications}
               {\MakeUppercase\NJUST@label@publications}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
@@ -470,7 +479,7 @@
       \endlist}
 %% 4. resume
 \newenvironment{resume}
-  {\Nchapter{\NJUST@label@resume}}
+  {{\centering\Nchapter{\NJUST@label@resume}}}
   {}
 \newenvironment{resumesection}[1]
   {{\noindent\normalfont\bfseries #1}
@@ -489,8 +498,9 @@
   {\endlist}
 %% 6. thanks
 \renewenvironment{thanks}
-  {\Nchapter{\NJUST@label@thanks}}
+  {{\centering\Nchapter{\NJUST@label@thanks}}}
   {}
+%%
 %%%%% ------------------------------------------------------------------------------------------
 %%  
 %%%%*************************** public vars for thesis ***********************************
