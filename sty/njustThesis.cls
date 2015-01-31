@@ -248,7 +248,7 @@
     \vskip 5pt
     \parbox[c][7cm][c]{\textwidth}{%
     \centering
-    %\includegraphics[width=5cm,height=5cm]{img/njust_logo.jpg}
+    \includegraphics[width=5cm,height=5cm]{img/njust_logo.eps}
     }%
     \vskip 14pt
     \bf\songti\zihao{-2}\NJUST@value@school

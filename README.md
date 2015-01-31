@@ -51,7 +51,9 @@ Usage:
 
     3. 命令行makeindex myThesis.nlo -s nomencl.ist -o myThesis.nls生成术语链接；
 
-    4. xelatex myThesis.tex重新编译生成pdf文件。
+    4. 更新参考文献bibtex myThesis.aux,并更新myThesis.bbl文件中的中文错误部分；
+
+    5. 多次运行xelatex myThesis.tex重新编译生成pdf文件。
 
 ================================================================================
 Files:
