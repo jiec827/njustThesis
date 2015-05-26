@@ -23,6 +23,7 @@ Pre-requirements:
 (Ref:http://www.latexstudio.net/latex-tip-791-how-to-configure-mactex-of-chinese-support/)
 
 3. OR texlive2014 on windows OS (winEdt8.0 & SumatraPDF is recommended)
+
 ================================================================================
 Notes:
 
