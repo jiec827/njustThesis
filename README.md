@@ -22,6 +22,7 @@ Pre-requirements:
 2. config ctex for MacTex 
 (Ref:http://www.latexstudio.net/latex-tip-791-how-to-configure-mactex-of-chinese-support/)
 
+3. OR texlive2014 on windows OS (winEdt8.0 & SumatraPDF is recommended)
 ================================================================================
 Notes:
 
@@ -35,7 +36,9 @@ readability of the codes(ecourage open-source projects);
 
     Updating the new logos; 
 
-    Make it more compatible with MacTex.
+    Make it more compatible with MacTex on OSX;
+
+    Make it easier for Windows OS user with texlive-2104.
 
 ================================================================================
 Download:
@@ -43,7 +46,7 @@ Download:
     git clone https://github.com/jiec827/njustThesis
 
 ================================================================================
-Usage:
+How to use it:
 
     1. 修改学位论文封面信息（tex/cover.tex），并将对应的具体章节内容添加至tex目录下的其他文件内（正文部分额外添加的章节需要在myThesis.tex文件中使用input命令包含）；
 
