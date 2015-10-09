@@ -63,15 +63,6 @@
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
 \RequirePackage{graphicx,psfrag,flafter,subfigure}
-%% hyperref package
-\hypersetup{CJKbookmarks,%
-       bookmarksnumbered,%
-              colorlinks,%
-               linkcolor=blue,%
-               citecolor=blue,%
-              plainpages=false,%
-            pdfstartview=FitH
-}
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%************************ load class configuretion ************************************
@@ -116,7 +107,7 @@
     \fi%
   \fi}%
 %% space used in items title
-\newcommand\NJUSTspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+\newcommand\NJUSTspace{\qquad}
 %% underline
 \def\NJUST@underline[#1]#2{%
   \CTEXunderline{\hbox to #1{\hfill#2\hfill}}}
@@ -154,7 +145,7 @@
 \newcommand\school[1]{\def\NJUST@value@school{#1}}
 %
 %% ==============================================
-%% about date 
+%% about date
 \newcommand\submitdate[1]{\def\NJUST@value@submitdate{#1}}
 \newcommand\incoverdate[1]{\def\NJUST@value@incoverdate{#1}}
 %%%%% ------------------------------------------------------------------------------------------
@@ -243,7 +234,7 @@
 %% ================================================
 %% info
   \begin{tabular}{rl}
-    \bf\kaishu\zihao{-2}\NJUST@label@incoverauthor & \bf\kaishu\zihao{-2}\NJUST@value@author 
+    \bf\kaishu\zihao{-2}\NJUST@label@incoverauthor & \bf\kaishu\zihao{-2}\NJUST@value@author
     \\[25pt]
     \bf\kaishu\zihao{-2}\NJUST@label@incoveradvisor & {\bf\kaishu\zihao{-2}\NJUST@value@advisor\hspace{4pt}}{\kaishu\zihao{3}\NJUST@value@advisortitle}
     \\
@@ -290,13 +281,13 @@
 %% ================================================
 %% title
       \rmfamily\bf\zihao{2} \NJUST@value@englishtitle
-    \vskip 30pt 
+    \vskip 30pt
 %% ================================================
 %% author
       \normalfont\it\zihao{-2}\NJUST@label@englishauthor
       \\
       \bf\zihao{-2}\emph\NJUST@value@englishauthor
-    \vskip 60pt 
+    \vskip 60pt
 %% ================================================
 %% supervisor
     \begin{tabular}{rl}
@@ -345,7 +336,7 @@
 \cleardoublepage
 \fi
 %%%%% ------------------------------------------------------------------------------------------
-%% 
+%%
 %%%%**************************** page setting **************************************
 %% set page style by fancyhdr:
   %% The syntax is: \fancyhead[selectors]{output you want}
@@ -359,7 +350,7 @@
   %% so [CE,RO] will refer to the center of the even pages and to the right side of the odd pages.
 %% configure fancy style
 \newcommand\pageDegree[1]{\def\NJUST@value@pageDegree{#1}}
-%% change page NO to Roman only for frontmatter 
+%% change page NO to Roman only for frontmatter
 \renewcommand\frontmatter{\pagenumbering{Roman}}
 %%
 \fancypagestyle{plain}{%
@@ -377,7 +368,7 @@
   \fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}%
   \fancyfoot[RO,LE]{\zihao{-5} --~\thepage~--}
 %%%%% ------------------------------------------------------------------------------------------
-%%  
+%%
 %%%%**************************** make abstract & keywords *****************************
 %% 1. CHN abstract
 \newenvironment{abstract}
@@ -415,9 +406,9 @@
   \fi
 }%
 %%%%% ------------------------------------------------------------------------------------------
-%%  
+%%
 %%%%******************************** make contents **************************************
-%% 
+%%
 \renewcommand\tableofcontents{%
     \if@twocolumn
       \@restonecoltrue\onecolumn
@@ -429,7 +420,7 @@
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
     }
-\addtocontents{toc}{\let\string\CTEX@spaceChar\relax}
+\addtocontents{toc}{\let\string\quad\relax}
 \newcommand\Nchapter[1]{%
   \if@mainmatter%
     \@mainmatterfalse%
@@ -440,7 +431,7 @@
   \fi
 }
 %%%%% ------------------------------------------------------------------------------------------
-%%  
+%%
 %%%%************************* make environments *********************************
 %% 0. list of figures, tables and bibtex
 %% seperately
@@ -544,25 +535,25 @@
   {}
 %%
 %%%%% ------------------------------------------------------------------------------------------
-%%  
+%%
 %%%%*************************** public vars for thesis ***********************************
-%% 
-\newcounter{nlgcounter} 
+%%
+\newcounter{nlgcounter}
 \newenvironment{nlglist}{%
 \begin{list}{{(\arabic{nlgcounter})}} %
     {
      \usecounter{nlgcounter}
-     \setlength{\leftmargin}{0cm}   
-     \setlength{\parsep}{\parskip}    
-     \setlength{\topsep}{1ex}        
-     \setlength{\itemsep}{0.4ex plus 0.5ex}        
-     \setlength{\labelsep}{0.3em}     
-     \setlength{\itemindent}{46pt}    
-     \setlength{\listparindent}{27pt} 
+     \setlength{\leftmargin}{0cm}
+     \setlength{\parsep}{\parskip}
+     \setlength{\topsep}{1ex}
+     \setlength{\itemsep}{0.4ex plus 0.5ex}
+     \setlength{\labelsep}{0.3em}
+     \setlength{\itemindent}{46pt}
+     \setlength{\listparindent}{27pt}
     }}
-{\end{list}}  
+{\end{list}}
 \renewcommand{\labelenumi}{(\theenumi)}
- 
+
 \endinput
 %%
 %% End of file `njustThesis.cls'.
