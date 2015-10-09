@@ -63,15 +63,6 @@
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
 \RequirePackage{graphicx,psfrag,flafter,subfigure}
-%% hyperref package
-\hypersetup{CJKbookmarks,%
-       bookmarksnumbered,%
-              colorlinks,%
-               linkcolor=blue,%
-               citecolor=blue,%
-              plainpages=false,%
-            pdfstartview=FitH
-}
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%************************ load class configuretion ************************************
