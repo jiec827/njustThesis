@@ -12,7 +12,7 @@ References:
 
 Date: 2015-01-03
 
-Status: start(2015-01-03) - 
+Status: start(2015-01-03) - end(2016-04-05)
 
 ================================================================================
 Pre-requirements:
@@ -23,6 +23,8 @@ Pre-requirements:
 (Ref:http://www.latexstudio.net/latex-tip-791-how-to-configure-mactex-of-chinese-support/)
 
 3. OR texlive2014 on windows OS (winEdt8.0 & SumatraPDF is recommended)
+
+4. MacTex-2015 has already configured the CHN fonts which made itself a better choice.
 
 ================================================================================
 Notes:
@@ -39,7 +41,7 @@ readability of the codes(ecourage open-source projects);
 
     Make it more compatible with MacTex on OSX;
 
-    Make it easier for Windows OS user with texlive-2104.
+    Make it easier for Windows OS user with texlive-2104 / 2015.
 
 ================================================================================
 Download:
@@ -81,3 +83,10 @@ pdf, fig, etc)
 7. bib: (directory) all references used in this thesis(in bibTeX format)
 
 ================================================================================
+修改：
+1. 新版封页
+2. 添加书脊
+3. 章节首页添加页眉
+4. 更新页面设置
+5. 增加图片和表格新例程
+6. 更新参考文献格式为GBT格式

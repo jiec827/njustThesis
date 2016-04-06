@@ -63,15 +63,7 @@
 \RequirePackage{mathtools,amsthm,amsfonts,amssymb,bm}
 %% graphics packages
 \RequirePackage{graphicx,psfrag,flafter,subfigure}
-%% hyperref package
-\hypersetup{CJKbookmarks,%
-       bookmarksnumbered,%
-              colorlinks,%
-               linkcolor=blue,%
-               citecolor=blue,%
-              plainpages=false,%
-            pdfstartview=FitH
-}
+%% 
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%************************ load class configuretion ************************************
@@ -85,16 +77,17 @@
 %%
 %%%%******************************* page layout ******************************************
 %%
-\oddsidemargin 0.8 true cm
+\oddsidemargin 0 true cm
 \if@twoside
   \evensidemargin 0 true cm
 \else
-  \evensidemargin 0.8 true cm
+  \evensidemargin 0 true cm
 \fi
 \textheight 24 true cm
-\textwidth 15.5 true cm
+\textwidth 16 true cm
 \topmargin -0.6 true cm
 \headheight 15pt
+\footskip 32 pt
 %%%%% ------------------------------------------------------------------------------------------
 %%
 %%%%********************* some style control commands ********************************
@@ -140,6 +133,8 @@
   \def\NJUST@value@title{#2}
   \def\NJUST@value@titlemark{\MakeUppercase{#1}}}
 \renewcommand\author[1]{\def\NJUST@value@author{#1}}
+\newcommand\titleUpp[1]{\def\NJUST@value@titleUpp{#1}}
+\newcommand\titleLow[1]{\def\NJUST@value@titleLow{#1}}
 %%
 %% ==============================================
 %% advisor & others
@@ -152,6 +147,10 @@
 \newcommand\interest[1]{\def\NJUST@value@interest{#1}}
 %
 \newcommand\school[1]{\def\NJUST@value@school{#1}}
+%
+\newcommand\titleBackbone[1]{\def\NJUST@value@titleBackbone{#1}}
+\newcommand\schoolBackbone[1]{\def\NJUST@value@schoolBackbone{#1}}
+%
 %
 %% ==============================================
 %% about date 
@@ -169,13 +168,13 @@
 %% header
     \songti\zihao{5}
     	\NJUST@label@classification~               %% header
-	\NJUSTunderline[120pt]{\NJUST@value@classification}
+	\NJUSTunderline[150pt]{\NJUST@value@classification}
 		\hfill
 	\NJUST@label@confidential~
-	\NJUSTunderline[120pt]{\NJUST@value@confidential}\hspace{1.4cm}
+	\NJUSTunderline[150pt]{\NJUST@value@confidential}\hspace{1.4cm}
    \vskip 10pt
    	 \NJUST@label@UDC~
-      	\NJUSTunderline[113pt]{\NJUST@value@UDC}
+      	\NJUSTunderline[143pt]{\NJUST@value@UDC}
             \hfill
       	\NJUSTunderline[0pt]{}
     \vskip 10pt
@@ -183,22 +182,27 @@
 %% logo
     \parbox[c][4cm][c]{\textwidth}{%
         \centering
-        \includegraphics[width=12cm]{img/logo/njust.eps}
+        \includegraphics[width=14cm]{img/logo/njust.eps}
     }%
 %% ==============================================
 %% title & author
     \vskip 10pt
-        \bf\kaishu\zihao{1}\NJUST@label@thesis      %% Thesis title
+        {\bf\kaishu\zihao{-0}\NJUST@label@thesis}      %% Thesis title
     \vskip \stretch{2}
-      \bf\heiti\zihao{-1}\NJUSTunderline{~\NJUST@value@title~}
+      {\vskip 10pt 
+      \bf\heiti\zihao{-1}\NJUSTunderline[400pt]{~\NJUST@value@titleUpp~}
+      \vskip 10pt
+                                \NJUSTunderline[400pt]{~\NJUST@value@titleLow~}} \\
+      \songti\zihao{-4}{\NJUST@label@titleLab}
     \vskip \stretch{2}
-      \bf\kaishu\zihao{-2}\NJUSTunderline{~\NJUST@value@author~}
+      {\bf\kaishu\zihao{-2}\NJUSTunderline[180pt]{~\NJUST@value@author~}} \\
+      \hspace{0.15cm}\songti\zihao{-4}{\NJUST@label@authorLab}
     \vskip \stretch{2}
 %% ==============================================
 %% advisor and others
 \normalfont\songti\zihao{4}
 \def\tabcolsep{1pt}
-\def\arraystretch{1.5}
+\def\arraystretch{1.25}
 \begin{tabular}{cc}
       \bf\NJUST@label@advisor   &  \NJUSTunderline[299pt]{{\bf\kaishu\zihao{3}\NJUST@value@advisor} \hspace{4pt} {\kaishu\zihao{4}\NJUST@value@advisortitle}}  \\
       \bf\NJUST@label@coadvisor & \NJUSTunderline[299pt]{{\bf\kaishu\zihao{3}\NJUST@value@coadvisor} \hspace{4pt} {\kaishu\zihao{4}\NJUST@value@coadvisortitle}}  \\
@@ -212,15 +216,22 @@
 %% footnote
  \vspace{2em}
  \NJUST@value@UDCfootnote
+%%%%**************************** make backbone & github ********************************
   \clearpage
   \if@twoside
     \thispagestyle{empty}
+    \begin{center}
+          \kaishu\zihao{5}{\NJUST@value@titleBackbone}
+          \vskip  \stretch{8}
+          \vfill
+          \kaishu\zihao{5}{\NJUST@value@schoolBackbone}
+    \end{center}
     \ifNJUST@typeinfo
       \vspace*{\stretch{1}}
       \begin{footnotesize}
         \noindent
-        Typeset by \LaTeXe{} at \CTEX@todayold \\
-        With package \NJUSTfileinfo \hspace{2pt} \NJUSTfileversion (\NJUSTfiledate) from https://github.com/jiec827/njustThesis
+        %Typeset by \LaTeXe{} at \CTEX@todayold \\
+        %With package from https://github.com/jiec827/njustThesis
         \end{footnotesize}
     \fi
     \cleardoublepage
@@ -364,9 +375,15 @@
 %%
 \fancypagestyle{plain}{%
   \fancyhf{}%
-  \fancyfoot[R]{\songti\zihao{-5} --~{\thepage}~--}
-  \renewcommand{\headrulewidth}{0pt}%
-  \renewcommand{\footrulewidth}{0pt}%
+  %\fancyfoot[R]{\songti\zihao{-5} ~{\thepage}~}
+  %\renewcommand{\headrulewidth}{0pt}%
+  %\renewcommand{\footrulewidth}{0pt}%
+  % ===
+  \fancyhead[LO]{\songti\zihao{-5}\NJUST@value@pageDegree}
+  \fancyhead[RO]{\songti\zihao{-5}\NJUST@value@titlemark}
+  \fancyhead[LE]{\songti\zihao{-5} \leftmark}%
+  \fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}%
+  \fancyfoot[RO,LE]{\zihao{-5} ~\thepage~}
 }
 \pagestyle{fancy}
   \fancyhf{}
@@ -375,7 +392,8 @@
   \fancyhead[RO]{\songti\zihao{-5}\NJUST@value@titlemark}
   \fancyhead[LE]{\songti\zihao{-5} \leftmark}%
   \fancyhead[RE]{\songti\zihao{-5}\NJUST@value@pageDegree}%
-  \fancyfoot[RO,LE]{\zihao{-5} --~\thepage~--}
+  \fancyfoot[RO,LE]{\zihao{-5} ~\thepage~}
+%%
 %%%%% ------------------------------------------------------------------------------------------
 %%  
 %%%%**************************** make abstract & keywords *****************************
@@ -385,7 +403,6 @@
   {}
 %% 2. CHN kewords
 \newcommand\keywords[1]{%
-  %\vspace{2ex}\noindent{\heiti \NJUST@label@keywords} #1}
   \vspace{2ex}\noindent{\bf\songti\zihao{4} \NJUST@label@keywords} #1}
 %% 3. Eng abstract
 \newenvironment{englishabstract}
@@ -506,6 +523,9 @@
       \list{\@biblabel{\@arabic\c@enumiv}}%
            {\settowidth\labelwidth{\@biblabel{#1}}%
             \leftmargin\labelwidth
+            \setlength{\itemsep}{5pt}
+	   \setlength{\parsep}{0pt}
+	   \setlength{\parskip}{0pt}
             \advance\leftmargin\labelsep
             \@openbib@code
             \usecounter{enumiv}%

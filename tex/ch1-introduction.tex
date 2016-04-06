@@ -17,11 +17,19 @@
 
 此外，\texttt{njustThesis}宏包还使用了宏包mathtools、amsthm、amsfonts、amssymb、bm、natbib和hyperref。目前大多数的\TeX{}系统中都包含有这些宏包。
 
-目前已经测试的系统和版本为（都需要预先对文字编辑器进行中文编码配置）：
+目前已经测试的系统和版本为：
+%% ++++++++++++++++++++++++++++++++++++++
+\begin{enumerate}
+\item texlive-2014(MacTeX on Mac OSX);
 
-a. texlive-2014(MacTeX on Mac OSX);
+\item texlive-2014 + winEdt8.0 + SumatraPDF(Windows OS);
 
-b. texlive-2014 + winEdt8.0 + SumatraPDF(Windows OS).
+\item macTex-2015.
+
+\end{enumerate}
+%% ++++++++++++++++++++++++++++++++++++++
+
+{\color{blue}{其中，针对2014版本的texlive需要首先配置中文字库，详细方法可以自行百度；2015版本之后ctex已经在发行版内完成了中文字库的配置，可以直接进行编译。另外，使用前需要自行设置中文参考文献标准，参考bib目录下GBT7714-2005NLang压缩文件说明。}}
 
 \section{下载与使用}
 \label{sec:howtouse}
@@ -31,7 +39,8 @@ njustThesis 模版包的最新版本可以从 https://github.com/jiec827/njustTh
   {\color{blue}{git clone https://github.com/jiec827/njustThesis}}
 \end{center}
 
-njustThesis 宏包包含4个文件夹和主函数myThesis.tex，另外附有说明文档和示例模版。文件架构如下：
+
+njustThesis 宏包包含4个文件夹和主函数myThesis.tex，另外附有说明文档和示例模版。文件架构如下：
 
 0. LICENSE: GPL证书，开源性质
 
@@ -50,7 +59,8 @@ njustThesis 模版包的最新版本可以从 https://github.com/jiec827/njustTh
 7. bib: (directory) 参考文献文件夹，使用bibTeX格式
 
 使用基本流程见READ.md文件或中文摘要中的描述。基本思路是，分别将封面、章节和附件中的内容更新到对应的*.tex文件，然后第一次编译刷新tex系统，在更新对应的引用文件系统，最后一次编译获得最终排版稿件。
-值得提醒的是,宏包中提供的范例文档《HowToUseIt.pdf》，对使用过程经常需要使用到的命令行进行的例句，尤其是插入图片时会遇到的单列、多列问题，表格的三线、多线，交叉引用等问题，都通过具体实例给出。对于具体用户而言，可以直接采用替换文中引用文件名的方式快速入门使用。
+
+值得提醒的是,宏包中提供的范例文档《HowToUseIt.pdf》，对使用过程经常需要使用到的命令行进行的例句，尤其是插入图片时会遇到的单列、多列问题，表格的三线、多线，交叉引用等问题，都通过具体实例给出。对于具体用户而言，可以直接采用替换文中引用文件名的方式快速入门使用。
 
 由于笔者个人的时间精力有限，可能会有一些尚未想到的很多方面，往广大师生朋友多多交流互动！
 
@@ -61,16 +71,16 @@ njustThesis 模版包的最新版本可以从 https://github.com/jiec827/njustTh
 \label{sec:remainingProblem}
 截止此次编译版本，\texttt{njustThesis}尚未满足的设计项（设计标准参见第~\ref{app:format}章）包含：
 
-1. 图表目录、术语表等具体格式细节尚未校核；
+1. 术语表的页眉尚未设置完整，因此未在编译中添加术语表；
 
-2. 图表标题的上下行距尚未校核；
+2. 一级标题（chapter）的行距问题存在疑问，段前行距略显大；
 
-3. 中文参考文献在列表时，最后以为作者前的英文and需要手动到＊.bbl文件中修改
+3. 中文参考文献在列表时，作者（4个以上）后面的“et al”需要在＊.bbl文件中手动替换为“等”。
 
 
 用户在使用中遇到问题或者需要增加某种功能，可以和作者联系：
 
-{\it{程杰 (Jie Cheng) \quad chengjie0827@gmail.com}}
+{\it{程杰 (Jie Cheng) \quad jie.cheng@aliyun.com}}
 
 或者直接参与GitHub$^{\circledR}$开源项目，进行互动性的完善开发：
 

@@ -1,0 +1,25 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Goman and Khrabrov(1994)]{Goman:state_aerodynamics}
+ {Goman M, Khrabrov A}.
+\newblock State-Space Representation of Aerodynamic Characteristics of an
+  Aircraft at High Angles of Attack[J].
+\newblock Journal of Aircraft, 1994, 31(5):1109--1115.
+
+\bibitem[黄贤禄 et al.(2002)]{BUAA:2002-CFD-missile}
+ {黄贤禄, 阎超, 陈靓}等.
+\newblock 多翼导弹复杂流场及气动力的数值计算[J].
+\newblock 北京航空航天大学学报, 2002, 28(4):395--398.
+
+\bibitem[Pattinson et al.(2013)]{Pattinson:2013_postall_oscillation}
+ {Pattinson J, Lowenberg M~H, Goman M~G}.
+\newblock Investigation of Poststall Pitch Oscillations of an Aircraft
+  Wind-Tunnel Model[J].
+\newblock Journal of aircraft, 2013, 50(6):1843--1855.
+
+\end{thebibliography}

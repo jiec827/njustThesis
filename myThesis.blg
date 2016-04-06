@@ -1,0 +1,73 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: myThesis.aux
+The style file: GBT7714-2005NLang_Upp.bst
+new.block is an unknown function---line 74 of file GBT7714-2005NLang_Upp.bst
+remove.dots is an unknown function---line 462 of file GBT7714-2005NLang_Upp.bst
+remove.dots is an unknown function---line 515 of file GBT7714-2005NLang_Upp.bst
+remove.dots is an unknown function---line 572 of file GBT7714-2005NLang_Upp.bst
+remove.dots is an unknown function---line 617 of file GBT7714-2005NLang_Upp.bst
+format.pages is an unknown function---line 1164 of file GBT7714-2005NLang_Upp.bst
+format.pages is an unknown function---line 1195 of file GBT7714-2005NLang_Upp.bst
+format.pages is an unknown function---line 1204 of file GBT7714-2005NLang_Upp.bst
+format.pages is an unknown function---line 1234 of file GBT7714-2005NLang_Upp.bst
+format.pages is an unknown function---line 1243 of file GBT7714-2005NLang_Upp.bst
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+*publisher is an unknown function---line 1930 of file GBT7714-2005NLang_Upp.bst
+*¡¡* is an unknown function---line 1939 of file GBT7714-2005NLang_Upp.bst
+ouput is an unknown function---line 2065 of file GBT7714-2005NLang_Upp.bst
+ouput is an unknown function---line 2069 of file GBT7714-2005NLang_Upp.bst
+ouput is an unknown function---line 2103 of file GBT7714-2005NLang_Upp.bst
+ouput is an unknown function---line 2106 of file GBT7714-2005NLang_Upp.bst
+format.conference.title is an unknown function---line 2623 of file GBT7714-2005NLang_Upp.bst
+format.cconference.title is an unknown function---line 2658 of file GBT7714-2005NLang_Upp.bst
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: bib/myRefs.bib
+You can't pop an empty literal stack for entry Goman:state_aerodynamics
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry BUAA:2002-CFD-missile
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You can't pop an empty literal stack for entry Pattinson:2013_postall_oscillation
+while executing---line 3561 of file GBT7714-2005NLang_Upp.bst
+You've used 3 entries,
+            6756 wiz_defined-function locations,
+            1220 strings with 8898 characters,
+and the built_in function-call counts, 1207 in all, are:
+= -- 107
+> -- 39
+< -- 1
++ -- 21
+- -- 9
+* -- 101
+:= -- 173
+add.period$ -- 9
+call.type$ -- 3
+change.case$ -- 3
+chr.to.int$ -- 3
+cite$ -- 3
+duplicate$ -- 51
+empty$ -- 135
+format.name$ -- 17
+if$ -- 276
+int.to.chr$ -- 1
+int.to.str$ -- 4
+missing$ -- 3
+newline$ -- 23
+num.names$ -- 6
+pop$ -- 23
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 38
+stack$ -- 0
+substring$ -- 81
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 6
+width$ -- 0
+write$ -- 49
+(There were 21 error messages)

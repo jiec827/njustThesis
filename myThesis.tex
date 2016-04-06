@@ -6,7 +6,7 @@
 %%  Repository: https://github.com/jiec827/njustThesis
 %%
 %%%%% ------------------------------------------------------------------------------------------
-%% re-written by Jie Cheng <chengjie0827@gmail.com>
+%% re-written by Jie Cheng <jie.cheng@aliyun.com>
 %% Last-modified: 2015-01-05
 %%
 %% This program can be redistributed and/or modified under the terms
@@ -60,8 +60,8 @@
 \listoffiguresandtables
 \addcontentsline{toc}{chapter}{图表目录}
 %%
-{\centering\printnomenclature}% nomenclature catalog
-\addcontentsline{toc}{chapter}{术语表}
+% {\centering\printnomenclature}% nomenclature catalog
+% \addcontentsline{toc}{chapter}{术语表}
 %%
 %%%%% ------------------------------------------------------------------------------------------
 %%
@@ -93,14 +93,14 @@
 %%
 \input{tex/thanks}
 %%
-%%% >>> Publications
-%%
-\input{tex/publications}
-%%
 %%% >>> Bibliography
 %%
 %\bibliographystyle{plainnat}
 {\centering\bibliography{bib/myRefs}}%
+%%
+%%% >>> Publications
+%%
+\input{tex/publications}
 %%
 %%% >>> Resume
 %%

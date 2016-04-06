@@ -10,7 +10,7 @@
 从整体而言，实现整个文档的架构在{\it{myThesis.tex}}中，通过{\it{input}}命令对需要的章节进行输入，基本格式如下表格~\ref{tab:controlFlow}
 
 
-\begin{table}
+\begin{table}[htb]
  \centering
   \caption{章节控制流程}        % title of Table
   \label{tab:controlFlow}    % label of Table
@@ -45,7 +45,7 @@
 章节的设置分别通过关键字完成，按照章节的级别依此如表~\ref{tab:setSection}所示，关于文档中具体章节的关键词设置可以参看原宏包中tex文件夹下的实例文件。
 
 
-\begin{table}
+\begin{table}[htb]
  \centering
   \caption{章节设置关键字}     % title of Table
   \label{tab:setSection}    % label of Table
@@ -68,7 +68,7 @@
 \label{sec:refofFigAndTab}
 交叉引用的前提是需要在定义章节、公式和图表的时候都对其进行命名标签（即\textbackslash label\{sec:labelName\}命令），在实际使用过程中通过标签进行引用。根据引用的特点可以将应用分成表~\ref{tab:citeType}中所示三类。
 
-\begin{table}
+\begin{table}[htb]
  \centering
   \caption{交叉引用类型}       % title of Table
   \label{tab:citeType}    % label of Table
@@ -83,6 +83,8 @@
     \hline
   \end{tabular}
 \end{table}
+
+其中，表格和图片的摆放位置由 \textbackslash begin\{table\}或\textbackslash begin\{figure\}后面的中括号设置，例如[htb]表示可以将图表放在当前位置（here）、页面顶端（top）或者页面底端（bottom）。通常，我校的学位论文要求图表就近放置，因此采用[htb]。
 
 {\bf{实例1：}}这里是对表格《交叉引用类型》的引用——表~\ref{tab:citeType}位于第~\pageref{tab:citeType}页，其标签为\textbackslash label\{tab:citeType\}。
 
@@ -106,3 +108,5 @@
 \end{center}
 
 再进行第二次编译后才能更新全文中的文献引用项。
+
+特别针对《中华人民共和国国家标准 GBT 7714-2005 文后参考文献著录规则》的要求，需要首先配置编译环境的文献模版，方法参考~bib~子目录下的GBT7714-2005NLang压缩包。

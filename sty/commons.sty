@@ -11,7 +11,7 @@
 %%
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesPackage{sty/commons}
-  [2015/01/05 v0.1 commons 
+  [2015/01/05 v0.1 commons
   macros package]
 %%%%% --------------------------------------------------------------------------------
 %%
@@ -103,6 +103,15 @@
 \RequirePackage[section]{placeins}% to prevent floats from being moved over section
 \usepackage{subfigure}% subcaptions for subfigures
 \usepackage{subfigmat}% matrices of similar subfigures, aka small mulitples
+\usepackage{overpic}
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{none}{ }
+\captionsetup{
+  labelsep=none
+}
+\captionsetup{belowskip=-10pt}% narrow the skip between caption and main words
+\setlength\abovedisplayskip{0pt}% set display skip between equations and main words
+\setlength\belowdisplayskip{0pt}
 %%
 %% >>> Page Layout and Line Spacing
 %%
@@ -118,8 +127,12 @@
 %\RequirePackage[square,comma,numbers,sort&compress]{natbib}% numeric cite mode
 \RequirePackage[square,comma,super,sort&compress]{natbib}% superscripted numeric cite mode
 %\bibliographystyle{apalike}% APA citation style
-\bibliographystyle{unsrtnat}% sort as referenced
+%\bibliographystyle{unsrtnat}% sort as referenced
 %\bibliographystyle{plainnat}% sort by author name
+%\bibliographystyle{GBT7714-2005NLang}% sort as CHN standard 3-type 
+%\bibliographystyle{GBT7714-2005NLang_UP}
+\bibliographystyle{GBT7714-2005NLang_Upp}
+\setlength{\bibsep}{0.5ex}  % vertical spacing between references
 %%
 %%% >>> Verbatim
 %%
@@ -174,9 +187,9 @@
     %pdfnewwindow=true,% links in new window
     colorlinks=true,% false: boxed links; true: colored links
     linkcolor=blue,% color of internal links
-    citecolor=green,% color of links to bibliography
-    filecolor=magenta,% color of file links
-    urlcolor=cyan% color of external links
+    citecolor=black,% color of links to bibliography
+    filecolor=blue,% color of file links
+    urlcolor=blue% color of external links
     %hidelinks% remove link color and border.
 }
 %% it gives LaTeX the possibility to manage links
