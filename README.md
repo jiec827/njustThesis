@@ -95,4 +95,6 @@ pdf, fig, etc)
 
 5. 增加图片和表格新例程
 
-6. 更新参考文献格式为GBT格式
+6. 更新参考文献格式为GBT格式（说明：GBT生成的＊.bll文件需要稍作修改才能匹配NUST的文献格式）
+
+7. 替换模版＊.cls文件中的\CTEX@spaceChar为\quad，适应texlive－2105的新函数

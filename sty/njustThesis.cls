@@ -109,7 +109,7 @@
     \fi%
   \fi}%
 %% space used in items title
-\newcommand\NJUSTspace{\protect\CTEX@spaceChar\protect\CTEX@spaceChar}
+\newcommand\NJUSTspace{\protect\quad\protect\quad}
 %% underline
 \def\NJUST@underline[#1]#2{%
   \CTEXunderline{\hbox to #1{\hfill#2\hfill}}}
@@ -446,7 +446,7 @@
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
     }
-\addtocontents{toc}{\let\string\CTEX@spaceChar\relax}
+\addtocontents{toc}{\let\string\quad\relax}
 \newcommand\Nchapter[1]{%
   \if@mainmatter%
     \@mainmatterfalse%
